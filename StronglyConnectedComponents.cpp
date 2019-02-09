@@ -36,10 +36,11 @@ void SCC(int x){
          if(visted[a[x][i]])
          	dfslow[x] = min(dfslow[x],dfslow[a[x][i]]);}
          if(dfslow[x] == dfsnum[x]){
-while (1) {
-int v = stk.back(); stk.pop_back(); visted[v] = false;
-cout<<v;
-if (x == v) break; }
+			while (1) {
+				int v = stk.back(); stk.pop_back(); visted[v] = false;
+				cout<<v;
+				if (x == v) break; 
+			}
          		cout<<endl;
          }
   }
@@ -54,10 +55,10 @@ int main(){
     lop(i,n) visted[i] = false , dfslow[i] = 0 , dfsnum[i] = -1,a[i].clear();
     timer = 0;
     mp.clear();
-int x,y;
+	int x,y;
     lop(i,m){
-    cin >> x >> y;
-a[x].push_back(y);
+    	cin >> x >> y;
+		a[x].push_back(y);
     }
     lop(i,n)
     if(dfsnum[i] == -1)
